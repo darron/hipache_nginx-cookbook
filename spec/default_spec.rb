@@ -16,4 +16,12 @@ describe 'hipache_nginx::default' do
   it 'includes the `redis` recipe' do
     expect(chef_run).to include_recipe('redis::default')
   end
+
+  it 'creates the nginx.conf file' do
+    expect(chef_run).to create_cookbook_file('/etc/nginx/nginx.conf')
+  end
+
+  it 'creates the hipache-nginx.cfg file' do
+    expect(chef_run).to create_cookbook_file('/etc/nginx/hipache-nginx.cfg')
+  end
 end

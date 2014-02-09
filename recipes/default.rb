@@ -32,7 +32,17 @@ package 'nginx-openresty'
 
 package 'liblua5.1-resty-redis'
 
-# Config file install here.
+cookbook_file '/etc/nginx/nginx.conf' do
+  owner 'root'
+  group 'root'
+  mode 0644
+end
+
+cookbook_file '/etc/nginx/hipache-nginx.cfg' do
+  owner 'root'
+  group 'root'
+  mode 0644
+end
 
 service 'nginx' do
   action [:enable, :start]
