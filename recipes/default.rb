@@ -18,7 +18,7 @@
 # limitations under the License.
 #
 
-# include_recipe 'redis::default'
+include_recipe 'redis::default'
 
 apt_repository 'nginx-openresty' do
   uri          'http://ppa.launchpad.net/nginx-openresty/stable/ubuntu'

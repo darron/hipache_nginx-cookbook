@@ -12,4 +12,8 @@ describe 'hipache_nginx::default' do
   it 'installs liblua5.1-resty-redis' do
     expect(chef_run).to install_package('liblua5.1-resty-redis')
   end
+
+  it 'includes the `redis` recipe' do
+    expect(chef_run).to include_recipe('redis::default')
+  end
 end
