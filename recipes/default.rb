@@ -18,4 +18,22 @@
 # limitations under the License.
 #
 
-# Install/configure something here
+# include_recipe 'redis::default'
+
+apt_repository 'nginx-openresty' do
+  uri          'http://ppa.launchpad.net/nginx-openresty/stable/ubuntu'
+  distribution node['lsb']['codename']
+  components   ['main']
+  keyserver    'keyserver.ubuntu.com'
+  key          '39AB0BFD'
+end
+
+package 'nginx-openresty'
+
+package 'liblua5.1-resty-redis'
+
+# Config file install here.
+
+service 'nginx' do
+  action [:enable, :start]
+end

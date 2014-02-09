@@ -22,7 +22,7 @@ Recipes
 
 ### hipache_nginx::default
 
-*Explain what the recipe does here*
+Thanks to [samalba]()https://github.com/samalba/hipache-nginx, [qinix](https://github.com/qinix/hipache-nginx) and [marcusramberg](https://github.com/marcusramberg/hipache-nginx)
 
 ### Packer Build
 

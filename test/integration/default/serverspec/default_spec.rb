@@ -3,7 +3,12 @@ require 'spec_helper'
 
 # Write integration tests with Serverspec - http://serverspec.org/
 describe 'hipache_nginx::default' do
-  it 'does something' do
-    pending 'Replace this with meaningful tests'
+  describe service('nginx') do
+    it { should be_enabled }
+    it { should be_running }
+  end
+
+  describe port(80) do
+    it { should be_listening }
   end
 end
