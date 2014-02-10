@@ -44,6 +44,18 @@ cookbook_file '/etc/nginx/hipache-nginx.cfg' do
   mode 0644
 end
 
+cookbook_file '/etc/nginx/ssl.crt' do
+  owner 'root'
+  group 'root'
+  mode 0644
+end
+
+cookbook_file '/etc/nginx/ssl.key' do
+  owner 'root'
+  group 'root'
+  mode 0640
+end
+
 service 'nginx' do
   action [:enable, :start]
 end
