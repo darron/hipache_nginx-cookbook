@@ -18,7 +18,8 @@
               "type": "digitalocean",
               "image_id": "1505447",
               "size_id": "63",
-              "snapshot_name": "hipache_nginx {{timestamp}}"
+              "snapshot_name": "hipache_nginx {{timestamp}}",
+              "region_id": "4"
             },
             {
               "type": "openstack",
