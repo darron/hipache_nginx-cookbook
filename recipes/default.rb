@@ -19,6 +19,7 @@
 #
 
 include_recipe 'redis::default'
+include_recipe 'apt::default'
 
 apt_repository 'nginx-openresty' do
   uri          'http://ppa.launchpad.net/nginx-openresty/stable/ubuntu'
@@ -26,6 +27,10 @@ apt_repository 'nginx-openresty' do
   components   ['main']
   keyserver    'keyserver.ubuntu.com'
   key          '39AB0BFD'
+end
+
+package 'libjpeg-turbo8' do
+  version  '1.1.90+svn733-0ubuntu4'
 end
 
 package 'nginx-openresty'
